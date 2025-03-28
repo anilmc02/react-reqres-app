@@ -1,70 +1,107 @@
-# Getting Started with Create React App
+# React ReqRes App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple React application that interacts with the [ReqRes API](https://reqres.in/) to manage user authentication, fetching users, editing user details, and deleting users. The app demonstrates CRUD operations using React, React Router, and Material-UI.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- User authentication (Login using ReqRes API)
+- Fetch users from API and display in a list
+- Edit user details (with simulated API response)
+- Delete users
+- Logout functionality
+- Protected routes (Users cannot access certain pages without authentication)
 
-### `npm start`
+## Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Frontend:** React, React Router, Material-UI
+- **Backend API:** ReqRes (Mock API for testing)
+- **State Management:** React Context API
+- **HTTP Requests:** Axios
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Project Structure
 
-### `npm test`
+```
+/react-reqres-app
+│── /src
+│   ├── /components
+│   │   ├── Login.js          # User login component
+│   │   ├── UserList.js       # Fetch, display, and manage users
+│   │   ├── EditUser.js       # Edit user details
+│   ├── /pages
+│   │   ├── Home.js           # Home page
+│   │   ├── LoginPage.js      # Login page
+│   │   ├── UsersPage.js      # User list page
+│   ├── /services
+│   │   ├── api.js            # API service for user operations
+│   ├── /context
+│   │   ├── AuthContext.js    # Authentication context
+│   ├── App.js                # Main app component with routes
+│   ├── index.js              # React entry point
+│── package.json
+│── README.md
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation & Setup
 
-### `npm run build`
+1. **Clone the repository**
+   ```sh
+   git clone https://github.com/anilmc02/react-reqres-app.git
+   cd react-reqres-app
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. **Install dependencies**
+   ```sh
+   yarn install  # If using Yarn
+   # OR
+   npm install   # If using npm
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. **Run the app**
+   ```sh
+   yarn start  # OR npm start
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. Open the browser and go to `http://localhost:3000`
 
-### `npm run eject`
+## Usage
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **Login Credentials:**
+  - Email: `eve.holt@reqres.in`
+  - Password: `cityslicka`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- After logging in, you will be redirected to the **User List Page**.
+- You can **edit** or **delete** users.
+- To logout, click on the `Logout` button.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## API Endpoints Used
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- `POST https://reqres.in/api/login` - Login
+- `GET https://reqres.in/api/users` - Fetch Users
+- `GET https://reqres.in/api/users/:id` - Fetch Single User
+- `PUT https://reqres.in/api/users/:id` - Update User
+- `DELETE https://reqres.in/api/users/:id` - Delete User
 
-## Learn More
+## How to Push to GitHub
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. **Initialize Git (if not already initialized)**
+   ```sh
+   git init
+   ```
+2. **Add and commit changes**
+   ```sh
+   git add .
+   git commit -m "Initial commit"
+   ```
+3. **Connect to GitHub repository**
+   ```sh
+   git remote add origin https://github.com/anilmc02/react-reqres-app.git
+   ```
+4. **Push to GitHub**
+   ```sh
+   git branch -M main  # Rename the branch if needed
+   git push -u origin main
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## License
+This project is open-source and available under the [MIT License](LICENSE).
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
